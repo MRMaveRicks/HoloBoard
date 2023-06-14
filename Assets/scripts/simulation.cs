@@ -7,19 +7,18 @@ using TMPro;
 public class simulation : MonoBehaviour
 {
     public Material[] btnMaterial;
-    public GameObject button, breadboard;
+    public GameObject button, btnContainer, breadboard;
     Transform circuit, child, hint;
     Transform comp1, comp2, comp3, comp4;
     GameObject comp2GO;
     string command;
     int completeCircuit;
     string sliderVal;
-    public bool checkCircuit = true;
 
     void Start()
     {
         StartCoroutine(parentEmpty());
-        
+        StartCoroutine(voice());
     }
 
     // coroutine to check if all the components have been placed on the hint
@@ -37,9 +36,8 @@ public class simulation : MonoBehaviour
                 hint = circuit.transform.Find("hints");         // get the child under hits 
             }
 
-
             // if the component GameObejct exists and it is empty
-            if (child != null && child.transform.childCount == 0 && checkCircuit == true)
+            if (child != null && child.transform.childCount == 0) 
             {
                 button.SetActive(true);     // show the simultaion button
 
@@ -50,13 +48,10 @@ public class simulation : MonoBehaviour
                 else if (circuit.name == "circuit2(Clone)")
                     completeCircuit = 2;
 
-
                 else if (circuit.name == "circuit3(Clone)")
                     completeCircuit = 3;
 
-
                 print(String.Format("circuit{0} complete", completeCircuit));       // sanity check
-                checkCircuit = false;
             }
 
             // if the working circuit is Circuit2 (the one with the potentiometer),
@@ -64,28 +59,12 @@ public class simulation : MonoBehaviour
             if (comp2GO != null)
             {
                 sliderVal = comp2GO.GetComponent<TMP_Text>().text;          // get the value of the slider from the TextMexhPro component 
-                print(comp1.gameObject.GetComponent<Light>().intensity = 5.0f * float.Parse(sliderVal));        // sanity check
                 comp1.gameObject.GetComponent<Light>().intensity = 5.0f * float.Parse(sliderVal);       // change the value of the light on the led accordingly to the slider value
             }
-
 
             yield return null;
         }
     }
-
-    // reset the flag that checks if the component parent is empty
-    // -> it is needed for checking if all the component have been placed on the target
-    //    (if all are placed on target, the component parent will be empty)
-    public void changeFlag()
-    {
-        StartCoroutine(parentEmpty());
-        button.SetActive(false);
-        checkCircuit = true;
-
-        circuit = null;
-        child = null;
-    }
-
 
     // start the simulation when the button is pressed
     public void startSimulation()
@@ -129,6 +108,22 @@ public class simulation : MonoBehaviour
             comp4.gameObject.SetActive(true);                           // activate the buttonDown gameObject to make it visible
         }
 
+        btnContainer.SetActive(false);
+    }
+
+
+    // start the simulation when the voice command "Start the simulation." is given
+    IEnumerator voice()
+    {
+        while (true)
+        {
+            command = gameObject.GetComponent<SpeechRecon>().voiceCommand;
+
+            if (command == "Start the simulation.")
+                startSimulation();
+
+            yield return null;
+        }
     }
 
 }

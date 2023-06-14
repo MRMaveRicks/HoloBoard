@@ -10,14 +10,12 @@ public class changeMenu : MonoBehaviour
 
     public GameObject[] Menus;
     public GameObject[] Circuits;
-    GameObject circuitDisplayed;
+    public GameObject circuitDisplayed;
     public int menuId = 0, circuitID;
 
     // from DeleteAll
     public GameObject[] ListOfObjects;
     public int listIdx;
-    string lang;
-
 
 
     void Start()
@@ -40,12 +38,13 @@ public class changeMenu : MonoBehaviour
                 Menus[Menus.Length - 2].SetActive(false);          // deactivate options menu
 
                 // from DeleteAll
+                //if (listIdx.Length > 0)
+                //{
                 for (int i = 0; i < listIdx; i++)
                     Destroy(ListOfObjects[i]);      // destroy all the instantiated obejects from the components box
 
                 listIdx = 0;        // once the list of objects has been emptied, reset the index of the list for new objects instantiation
-
-                //playBtn.SetActive(false);       // deactivate the Start Simulation button
+                //}
             }
 
 
@@ -58,10 +57,7 @@ public class changeMenu : MonoBehaviour
                 Menus[menuId].SetActive(true);      // activate previous menu
 
                 if (menuId == 2)
-                    Debug.Log("coming back from lesson");
-
-               
-                
+                    Debug.Log("coming back from lesson");  
             }
 
             // if the user is inside any of the specific-component selection menu (led/resistor/cables),
@@ -104,7 +100,8 @@ public class changeMenu : MonoBehaviour
 
         // activate the breadboard GameObject in front of the menu and get its position
         Circuits[0].SetActive(true);
-        Circuits[0].transform.position = transform.position + transform.forward + new Vector3(0, -0.5f, 0);
+        Circuits[0].transform.position = transform.position + transform.forward + new Vector3(0, 0.3f, 0.3f);
+        Circuits[0].transform.localScale =  new Vector3(1, 1, 1);
 
         // instantinate the circuit of the selected lesson (components, hints and tooltips) on top of the breadboard GameObject
         var myCircuit = Instantiate(Circuits[lesson], 
@@ -115,12 +112,7 @@ public class changeMenu : MonoBehaviour
         // activate the circuit GameObject
         myCircuit.SetActive(true);
         circuitDisplayed = myCircuit;
-        //myCircuit.name = "Circuit";     // change the name of the instantiated clone circuit
-
-        //playBtn.SetActive(true);        // activate the Start Simulation button
     }
-
-
 
 
 }

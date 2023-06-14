@@ -1,0 +1,7 @@
+#include "il2cpp-config.h"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\BoehmGC.cpp"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\GCHandle.cpp"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\GarbageCollector.cpp"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\NullGC.cpp"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\WriteBarrier.cpp"
+#include "D:\Jampol\Documents\JP\proyectos\Metaversity\MaveRicks\Build1\Il2CppOutputProject\IL2CPP\libil2cpp\gc\WriteBarrierValidation.cpp"

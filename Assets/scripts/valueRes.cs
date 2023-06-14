@@ -133,7 +133,6 @@ public class valueRes : MonoBehaviour
 
         // the name of the instantiated resistor will be its value, so it can be used later on 
         Debug.Log(objectSpawned.name.Substring(3));     
-
     }
 
 }

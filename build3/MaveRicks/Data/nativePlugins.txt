@@ -1,0 +1,6 @@
+Microsoft.CognitiveServices.Speech.extension.audio.sys.dll
+Microsoft.CognitiveServices.Speech.extension.kws.dll
+openxr_loader.dll
+Microsoft.CognitiveServices.Speech.extension.lu.dll
+
+Microsoft.CognitiveServices.Speech.core.dll

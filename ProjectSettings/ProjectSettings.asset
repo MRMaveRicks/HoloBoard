@@ -618,11 +618,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HoloBoard
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: MR_MaveRicks
+  metroCertificateIssuer: MR_MaveRicks
+  metroCertificateNotAfter: 8054e161adbdda01
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: MaveRicks

@@ -1,0 +1,10 @@
+Microsoft.CognitiveServices.Speech.extension.audio.sys.dll
+Microsoft.CognitiveServices.Speech.extension.kws.dll
+openxr_loader.dll
+Microsoft.Holographic.AppRemoting.OpenXr.dll
+Microsoft.CognitiveServices.Speech.extension.lu.dll
+
+Microsoft.CognitiveServices.Speech.core.dll
+
+PerceptionDevice.dll
+Microsoft.Holographic.AppRemoting.OpenXr.SU.dll
